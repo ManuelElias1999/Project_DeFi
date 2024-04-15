@@ -1,28 +1,33 @@
-REMIX DEFAULT WORKSPACE
+# DEFI Token Farm
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This repository contains smart contracts for a DEFI (Decentralized Finance) token farm project. The main purpose of the project is to allow users to stake their tokens and earn additional rewards in the form of another token.
 
-This workspace contains 3 directories:
+## Project Purpose
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+The DEFI Token Farm project serves to:
 
-SCRIPTS
+- Enable users to stake their ERC-20 tokens and earn additional rewards.
+- Provide a decentralized platform for stake management and rewards distribution.
+- Incentivize participation in the blockchain network by rewarding users for keeping their tokens staked.
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+## Project Functionality
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+The project functions as follows:
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+1. **JamToken (JamToken.sol Contract)**: This contract defines the ERC-20 token called JAM Token. It is the token that users can stake in the token farm.
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+2. **StellarToken (StellarToken.sol Contract)**: This contract defines another ERC-20 token called Stellar Token (SET). This token is used as a reward for users participating in the token farm.
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+3. **TokenFarm (TokenFarm.sol Contract)**: This contract manages the staking of tokens and the distribution of rewards. It allows users to stake their JAM Tokens and receive rewards in SET Tokens. The contract also allows the owner to issue rewards to the stakers.
+
+## Functionality of Each Code
+
+- **JamToken.sol**: Defines the ERC-20 token JAM Token. It allows token transfer, approval, and allowance management.
+
+- **StellarToken.sol**: Defines the ERC-20 token Stellar Token (SET). It provides the same functionalities as JamToken.sol.
+
+- **TokenFarm.sol**: Manages the staking of tokens and the distribution of rewards. It allows users to stake their JAM Tokens, receive rewards in SET Tokens, and allows the owner to issue rewards to the stakers.
+
+## License
+
+This project is under the MIT License.
